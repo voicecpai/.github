@@ -15,7 +15,18 @@ VoiceTwin은 단순한 텍스트 번역을 넘어, **AI Voice Cloning** 기술�
 ---
 
 ## 🛠 기술 스택
+## 🏛️ System Architecture & Flow
+VoiceTwin은 React, Spring Boot, FastAPI 그리고 외부 AI 모델 간의 유기적인 시퀀스를 통해 실시간 통번역을 수행합니다.
 
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/9f5fa0a1-b21e-4fed-9b8b-d5e2b8e632b1" width="90%" alt="VoiceTwin Architecture Sequence Diagram" />
+  <p><i>[VoiceTwin 서비스 아키텍처 및 데이터 흐름도]</i></p>
+</div>
+
+1.  **React (5173)**: 사용자의 음성 데이터와 목표 언어를 수집하여 메인 백엔드로 전송합니다.
+2.  **Spring Boot (8080)**: 사용자의 인증(JWT)을 검증하고 AI 엔진으로 요청을 라우팅합니다.
+3.  **FastAPI AI (8000)**: OpenAI(STT, GPT) 및 ElevenLabs(Voice Clone)와 통신하여 AI 파이프라인을 처리합니다.
+4.  **Result**: 최종 번역된 텍스트 메타데이터와 복제된 목소리 오디오(MPEG)를 사용자에게 반환합니다.
 ### AI & Speech Processing
 - **Python (FastAPI)**: 고성능 비동기 AI API 서버 구축
 - **OpenAI Whisper**: 고정밀 음성 인식(STT) 및 텍스트 추출
