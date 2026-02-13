@@ -78,5 +78,3 @@ VoiceTwin은 React, Spring Boot, FastAPI 그리고 외부 AI 모델 간의 유�
 
 ---
 
-## 👥 팀원
-- **Full-Stack & AI Engine**: 배석현 (bjh49)
