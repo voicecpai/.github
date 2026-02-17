@@ -68,7 +68,55 @@ VoiceTwin은 React, Spring Boot, FastAPI 그리고 외부 AI 모델 간의 유�
 - **Spring Backend**: 사용자 인증(JWT), 데이터 저장 및 요청 라우팅
 - **AI Server (FastAPI)**: STT -> Translation -> Voice Cloning -> TTS 파이프라인 처리
 
----
+## 디렉토리 구조
+
+### Spring Boot (voiceplan)
+
+```text
+voiceplan/
+├─ src/main/java/com/example/voiceplan/
+│  ├─ domain/
+│  │  ├─ auth/
+│  │  │  ├─ controller/
+│  │  │  ├─ dto/
+│  │  │  ├─ entity/
+│  │  │  └─ service/
+│  │  ├─ user/
+│  │  ├─ glossary/
+│  │  └─ voice/
+│  └─ global/
+│     ├─ common/
+│     ├─ config/
+│     └─ security/
+└─ src/main/resources/
+   ├─ application.yml
+   ├─ application-local.yml
+   └─ application-prod.yml
+```
+
+### FastAPI (ai-server)
+
+```text
+ai-server/
+├─ app/
+│  ├─ main.py
+│  ├─ api/v1/endpoints/
+│  │  └─ voice_translation.py
+│  ├─ core/
+│  │  ├─ config.py
+│  │  └─ security.py
+│  └─ services/
+│     ├─ audio_service.py
+│     ├─ stt_service.py
+│     ├─ translation_service.py
+│     ├─ voice_service.py
+│     └─ voice_store.py
+├─ uploads/
+│  ├─ voice_map.db
+│  └─ user_voice_map.json
+└─ dockerfile
+```
+
 
 ## 💡 배운 점 & 트러블슈팅
 - **AI 서버 응답 지연 최적화**: FastAPI의 비동기 처리를 통한 오디오 처리 병목 현상 해결
