@@ -10,7 +10,7 @@ VoiceTwin은 단순한 텍스트 번역을 넘어, **AI Voice Cloning** 기술�
 [▶️ VoiceTwin 시연 영상 보러가기](영상_링크_주소)
 -->
 ## 🚀 Live Demo
-- **Frontend**: [VoiceTwin Online](https://voicetwin-front.vercel.app/login)
+- **Frontend**: [VoiceTwin Online](https://voicetwin-front.vercel.app/login) -> 현재는 비용 문제로 기능이 되지 않음.
 - **Status**: Deployment via Vercel
 ---
 
